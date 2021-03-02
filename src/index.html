@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Органайзер</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/classes/storageManager.js"></script>
+<script src="js/methods/hideBlock.js"></script>
+<script src="js/methods/appendBlock.js"></script>
+<script src="js/methods/getTodayTimeString.js"></script>
+<script src="js/methods/getNodeIndex.js"></script>
+<script src="js/addTaskFromList.js"></script>
+<script src="js/createTaskInfo.js"></script>
+<script src="js/update.js"></script>
+<script src="js/setTaskSubmit.js"></script>
+<script src="js/toggleDateLabel.js"></script>
+<script src="js/expandBtnClick.js"></script>
+<script src="js/main.js" defer></script>
+</head>
+<body class="">
+  <header class="header">
+    <h1 class="header__title header-title">Органайзер</h1>
+  </header>
+  <main>
+  <section class="tasks">
+    <article class="tasks__block tasks-block">
+    <div class="tasks-block_top cap">
+    <h2 class="tasks-title">Задачи</h2>
+    <button class="create-button">Создать задачу</button>
+    <button class="top-expand" title="Развернуть"></button>
+    </div>
+    <ul class="tasks__list tasks-list"></ul>
+    </article>
+  <div class="create-block" hidden>
+  <form action="#" method="get" name="createTaskForm" class="tasks__form tasks-form">
+  <div class="tasks-form-top">
+    <h3 class="tasks-form__title tasks-form-title">Создать задачу</h3>
+    <button class="close tasks-form-close"></button>
+  </div>
+    <label for="task-title" class="sr-only">Что сделать?</label>
+      <input id="task-title" class="tasks-form-field tasks-form-text" type="text" name="title" placeholder="Что сделать?">
+    <label for="task-time" class="sr-only">Дата выполнения задачи</label>
+      <input id="task-time" class="tasks-form-field tasks-form-date" type="date" name="time">
+    <label for="task-description" class="sr-only">Описание задачи</label>
+      <textarea id="task-description" class="tasks-form-field tasks-form-area" name="description" placeholder="Нужно больше подробностей!"></textarea>
+    <button class="tasks-form-button tasks-form-submit" type="submit">Поставить задачу</button>
+    <button class="tasks-form-button tasks-form-cancel" type="reset">Отмена</button>
+  </form>
+  </div>
+  </section>
+  </main>
+  <template id="js-task-item">
+    <div class="task__header">
+      <h3 class="task__title"></h3>
+      <div class="task__btns">
+       <button class="perf"></button>
+        <button class="miss"></button>
+        <button class="del"></button>
+      </div>
+    </div>
+    <time class="task__time"></time>
+    <p class="task__desc"></p>
+  </template>
+  <template id="js-done-task-item">
+    <div class="task__header">
+      <h3 class="task__title"></h3>
+      <div class="task__btns">
+        <button class="del"></button>
+      </div>
+    </div>
+    <time class="task__time"></time>
+    <p class="task__desc"></p>
+  </template>
+</body>
+</html>
